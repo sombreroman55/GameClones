@@ -11,7 +11,7 @@ SRCDIR := src
 OBJDIR := obj
 
 # Libraries
-LIBS := -L/usr/local/lib -lSDL2
+LIBS := -L/usr/local/lib -lSDL2 -lSDL2_ttf
 
 # Files and Folders
 SRCFILES := $(wildcard $(SRCDIR)/*.c)

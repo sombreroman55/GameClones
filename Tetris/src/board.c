@@ -6,14 +6,16 @@
 
 #include "board.h"
 
+Board brd;
+
 void initBoard (void)
 {
     int i, j;
-    for (i = 0; i < HEIGHT; i++)
+    for (i = 0; i < BOARD_HEIGHT; i++)
     {
-        for (j = 0; j < WIDTH; j++)
+        for (j = 0; j < BOARD_WIDTH; j++)
         {
-            grid[i][j] = 'N';
+            brd.grid[i][j] = 'N';
         }
     }
 }
@@ -21,9 +23,9 @@ void initBoard (void)
 int rowFull (int row)
 {
     int j;
-    for (j = 0; j < WIDTH; j++)
+    for (j = 0; j < BOARD_WIDTH; j++)
     {
-        if (grid[row][j] != 'N')
+        if (brd.grid[row][j] != 'N')
             return 0;
     }
     return 1;
@@ -32,8 +34,8 @@ int rowFull (int row)
 void clearRow (int row)
 {
     int j;
-    for (j = 0; j < WIDTH; j++)
+    for (j = 0; j < BOARD_WIDTH; j++)
     {
-        grid[row][j] = 'N';
+        brd.grid[row][j] = 'N';
     }
 }

@@ -4,12 +4,7 @@
  */
 
 //Using SDL and standard IO
-#include <SDL2/SDL.h>
-#include <stdio.h>
-
-//Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+#include "globals.h"
 
 //Starts up SDL and creates window
 int init();
@@ -23,7 +18,7 @@ SDL_Window* gWindow = NULL;
 //The surface contained by the window
 SDL_Surface* gScreenSurface = NULL;
 
-int main (int argc, char* args[])
+int main (int argc, char** args)
 {
     //Start up SDL and create window
     if (!init())
@@ -73,7 +68,7 @@ int init()
     else
     {
         //Create window
-        gWindow = SDL_CreateWindow ("Tetris", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        gWindow = SDL_CreateWindow (TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
         if (gWindow == NULL)
         {
             printf ("Window could not be created! SDL_Error: %s\n", SDL_GetError());

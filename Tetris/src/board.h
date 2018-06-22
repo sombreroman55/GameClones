@@ -4,13 +4,11 @@
  *
  */
 
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef _BOARD_H_
+#define _BOARD_H_
 
+#include "globals.h"
 #include "block.h"
-
-#define HEIGHT 22
-#define WIDTH 10
 
 typedef struct Tile
 {
@@ -18,11 +16,11 @@ typedef struct Tile
 } Tile;
 
 typedef struct {
-    Block grid[HEIGHT][WIDTH];
+    char grid[BOARD_HEIGHT][BOARD_WIDTH];
 } Board;
 
 void initBoard (void);
-int rowFull (void);
-void clearRow (void);
+int rowFull (int);
+void clearRow (int);
 
-#endif /* BOARD_H */
+#endif /* _BOARD_H_ */
